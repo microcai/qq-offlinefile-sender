@@ -1,0 +1,3 @@
+[submodule "libwebqq"]
+	path = libwebqq
+	url = git://github.com/microcai/libwebqq.git
