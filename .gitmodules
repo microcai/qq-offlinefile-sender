@@ -1,3 +1,6 @@
 [submodule "libwebqq"]
 	path = libwebqq
 	url = git://github.com/microcai/libwebqq.git
+[submodule "avhttp"]
+	path = avhttp
+	url = git://github.com/avplayer/avhttp.git
