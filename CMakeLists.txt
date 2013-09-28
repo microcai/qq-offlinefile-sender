@@ -162,6 +162,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(avboost/include)
 include_directories(avhttp/include)
+include_directories(libwebqq/include)
 
 add_subdirectory(libwebqq)
 
