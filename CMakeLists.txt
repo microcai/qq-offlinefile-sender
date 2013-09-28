@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 2.8.9)
+cmake_policy(SET CMP0020 OLD)
+
 project(QQOfflineFileSender)
 
 # ============== cpack ===============
@@ -192,6 +194,3 @@ check_library_exists(rt clock_gettime "" HAVE_CLOCK_GETTIME)
 if(HAVE_CLOCK_GETTIME)
         target_link_libraries(QQOfflineFileSender -lrt)
 endif(HAVE_CLOCK_GETTIME)
-
-
-cmake_policy(SET CMP0020 OLD)
