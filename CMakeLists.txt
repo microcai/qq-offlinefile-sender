@@ -97,11 +97,11 @@ if(ENABLE_LTO)
 	set(CMAKE_LD_FLAGS "${CMAKE_LD_FLAGS} -flto -Wl,-flto")
 endif()
 
-#find_package(Qt5Core REQUIRED)
-#find_package(Qt5Gui REQUIRED)
-#find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Core REQUIRED)
+find_package(Qt5Gui REQUIRED)
+find_package(Qt5Widgets REQUIRED)
 
-find_package(Qt4 REQUIRED)
+#find_package(Qt5 REQUIRED)
 find_package(Boost 1.54 REQUIRED COMPONENTS log date_time filesystem system regex locale thread)
 
 include_directories(${QT_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR})
@@ -169,13 +169,13 @@ set(QQOFFLINE_FILE_SENDER_SOURCES buddymodel.cpp
 	askvc.cpp
 )
 
-QT4_WRAP_UI(UI_HEADERS dialog.ui askvc.ui)
-#qt4_automoc(${QQOFFLINE_FILE_SENDER_SOURCES})
+QT5_WRAP_UI(UI_HEADERS dialog.ui askvc.ui)
 
 add_executable(QQOfflineFileSender ${UI_HEADERS} ${QQOFFLINE_FILE_SENDER_SOURCES})
 
-set_target_properties(QQOfflineFileSender PROPERTIES AUTOMOC TRUE)
+qt5_use_modules(QQOfflineFileSender Widgets Core Gui)
 
+set_target_properties(QQOfflineFileSender PROPERTIES AUTOMOC TRUE)
 
 target_link_libraries(QQOfflineFileSender ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
 

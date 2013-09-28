@@ -49,11 +49,13 @@ private slots:
 
     void on_update_buddy_list(QSharedPointer< std::vector<webqq::qqBuddy_ptr> >);
     void on_listView_buddy_clicked(const QModelIndex &index);
+	void on_send_finshed(boost::system::error_code);
 
 signals:
 
 	void need_vc(std::string);
 	void update_buddy_list(QSharedPointer< std::vector<webqq::qqBuddy_ptr> >);
+	void send_finshed(boost::system::error_code);
 
 private:
     Ui::MainDialog ui;

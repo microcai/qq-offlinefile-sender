@@ -59,5 +59,3 @@ void BuddyModel::set_buddies(QSharedPointer< std::vector< webqq::qqBuddy_ptr> > 
     buddies.swap(_p);
     emit layoutChanged();
 }
-
-#include "buddymodel.moc"
